@@ -1,9 +1,18 @@
-import Image from "next/image";
+"use client";
+
+
+import HeroSection from "@/components/HeroSection";
+
+
 
 export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center ">
+  // const [expanded, setExpanded] = useState(false);
 
+  return (
+    <div className=" ">
+  
+      {/* <Hero expanded={expanded} setExpanded={setExpanded} /> */}
+      <HeroSection></HeroSection>
     </div>
   );
 }
