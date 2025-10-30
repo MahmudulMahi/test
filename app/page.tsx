@@ -2,6 +2,7 @@
 
 
 import HeroSection from "@/components/HeroSection";
+import Publications from "@/components/proud";
 
 
 
@@ -13,6 +14,7 @@ export default function Home() {
   
       {/* <Hero expanded={expanded} setExpanded={setExpanded} /> */}
       <HeroSection></HeroSection>
+      <Publications></Publications>
     </div>
   );
 }
