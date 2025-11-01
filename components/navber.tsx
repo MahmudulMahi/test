@@ -29,7 +29,7 @@ export default function Navbar() {
       <div className="max-w-[1440px] mx-auto px-4  md:px-6 lg:px-24 py-3 flex items-center justify-between h-[80px] md:h-[98px]">
         
         <div className="flex items-center space-x-2">
-          {/* logo */}
+          {/* logo navber */}
           <Image
             src="/logo/logo.png"
             alt="Logo"
