@@ -1,3 +1,5 @@
+
+
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
@@ -25,16 +27,19 @@ export default function Navbar() {
       }}
     >
       <div className="max-w-[1440px] mx-auto px-4  md:px-6 lg:px-24 py-3 flex items-center justify-between h-[80px] md:h-[98px]">
+        
         <div className="flex items-center space-x-2">
           {/* logo */}
           <Image
             src="/logo/logo.png"
             alt="Logo"
-            fill
+            width={188}
+            height={32}
             className="w-[120px] sm:w-[150px] md:w-[188px] h-auto"
           />
         </div>
 
+       
         <div className="hidden md:flex items-center space-x-6 text-[16px] text-gray-800 ">
           <button className="border border-gray-700 rounded-full px-3 py-1.5 hover:bg-gray-200 transition">
             HOME
@@ -51,11 +56,13 @@ export default function Navbar() {
           </div>
         </div>
 
+       
         <div className="flex items-center space-x-3 sm:space-x-6">
           <button className="bg-[#122620] text-white px-4 py-2 rounded-full text-xs md:text-sm hover:bg-[#10382a] transition whitespace-nowrap">
             CONTACT US
           </button>
 
+          
           <button
             className="p-2 border border-gray-700 rounded-full md:hidden"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -63,12 +70,14 @@ export default function Navbar() {
             <FiMenu />
           </button>
 
+          
           <div className="hidden md:block border rounded-full p-2">
             <IoMenuSharp className="text-2xl" />
           </div>
         </div>
       </div>
 
+     
       {menuOpen && (
         <div className="absolute top-[80px] right-4 bg-white border rounded-md shadow-md p-4 md:hidden w-[200px]">
           <div className="flex flex-col space-y-3 text-gray-800">
@@ -83,3 +92,4 @@ export default function Navbar() {
     </nav>
   );
 }
+
