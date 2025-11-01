@@ -38,6 +38,7 @@ export default function Navbar() {
             className="w-[120px] sm:w-[150px] md:w-[188px] h-auto"
           />
         </div>
+        
 
        
         <div className="hidden md:flex items-center space-x-6 text-[16px] text-gray-800 ">

@@ -1,6 +1,7 @@
 "use client";
 
 
+import NextHeroWithFramerMotion from "@/components/HeroSection";
 import HeroSection from "@/components/HeroSection";
 import Publications from "@/components/proud";
 
@@ -13,8 +14,10 @@ export default function Home() {
     <div className=" ">
   
       {/* <Hero expanded={expanded} setExpanded={setExpanded} /> */}
-      <HeroSection></HeroSection>
+      {/* <HeroSection></HeroSection> */}
+         <NextHeroWithFramerMotion></NextHeroWithFramerMotion>
       <Publications></Publications>
+   
     </div>
   );
 }
