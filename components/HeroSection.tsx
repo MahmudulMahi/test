@@ -7,7 +7,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 export default function HeroSection() {
   const [clickStage, setClickStage] = useState(0);
 
-  // 0 = normal, 1 = zoom medium, 2 = zoom large, 3 = full background
+  
   const handleClick = () => {
     setClickStage((prev) => (prev === 3 ? 0 : prev + 1));
   };
@@ -15,9 +15,9 @@ export default function HeroSection() {
   return (
     <section
       onClick={handleClick}
-      className="relative h-[700px] lg:h-[1200px] bg-[#E0D1BE] overflow-hidden flex items-center justify-start cursor-pointer"
+      className="relative h-[700px] lg:h-[1200px] bg-[#E0D1BE] overflow-hidden flex items-center justify-start cursor-pointer px-4  md:px-6 lg:px-24"
     >
-      {/* Background Image (visible at stage 3) */}
+      
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: clickStage === 3 ? 1 : 0 }}
@@ -99,11 +99,11 @@ export default function HeroSection() {
         className="z-30"
       >
         <div className="flex flex-col items-center md:items-start gap-4 ">
-          <h1 className="text-4xl md:text-6xl font-light leading-tight tracking-wide max-w-[700px] pl-11">
+          <h1 className="text-4xl md:text-6xl font-light leading-tight tracking-wide max-w-[700px] ">
             RESULTS YOU <br /> CAN SEE PR <br /> YOU CAN TRUST.
           </h1>
 
-          {/* Fade in subtitle & button only at stage 3 */}
+          
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{
@@ -125,7 +125,7 @@ export default function HeroSection() {
         </div>
       </motion.div>
 
-      {/* Top Image */}
+ 
       <motion.div
         initial={{ scale: 1, opacity: 1 }}
         animate={
@@ -149,7 +149,7 @@ export default function HeroSection() {
         />
       </motion.div>
 
-      {/* Middle Image */}
+   
       <motion.div
         animate={{
           opacity: clickStage === 3 ? 0 : 1,
@@ -167,7 +167,7 @@ export default function HeroSection() {
         />
       </motion.div>
 
-      {/* Bottom Image */}
+     
       <motion.div
         animate={{
           opacity: clickStage === 3 ? 0 : 1,
@@ -185,7 +185,7 @@ export default function HeroSection() {
         />
       </motion.div>
 
-      {/* Circular Spinner */}
+    
       <motion.div
         animate={{
           opacity: clickStage === 3 ? 0 : 1,
@@ -199,7 +199,7 @@ export default function HeroSection() {
           alt="Spinner"
           width={400}
           height={400}
-          className="object-cover w-full h-full"
+          className="object-cover w-full h-full "
         />
       </motion.div>
     </section>

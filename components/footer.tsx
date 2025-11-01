@@ -10,7 +10,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="relative text-white py-20 px-6 md:px-16 lg:px-24 overflow-hidden">
+    <footer className="relative text-white py-20 px-4  md:px-6 lg:px-24 overflow-hidden">
       {/* Gradient Background */}
       <div
         className="absolute inset-0"
@@ -64,9 +64,9 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="bg-transparent text-gray-300 px-4 py-2 flex-grow outline-none text-sm w-"
+                className="bg-transparent text-gray-300 px-4 py-2 flex-grow outline-none text-sm m-1.5 w-[166px] md:w-full"
               />
-              <button className="bg-[#f3d9b0] text-black px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#e6c89b] transition">
+              <button className="bg-[#f3d9b0] text-black px-4 py-3 rounded-full text-sm font-semibold hover:bg-[#e6c89b] transition ">
                 Subscribe
               </button>
             </div>

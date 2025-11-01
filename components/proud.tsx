@@ -1,5 +1,8 @@
+
+"use client";
 import Image from "next/image";
-import React from "react";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const publications = [
   { id: 1, title: "Newsweek", img: "/grid/1.png" },
@@ -14,9 +17,27 @@ const publications = [
   { id: 10, title: "Table Layout", img: "/grid/10.png" },
 ];
 
-const Publications: React.FC = () => {
+export default function Publications() {
+  const [items, setItems] = useState(publications);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setItems((prev) => {
+        const newOrder = [...prev];
+        
+        const i = Math.floor(Math.random() * newOrder.length);
+        let j = Math.floor(Math.random() * newOrder.length);
+        while (j === i) j = Math.floor(Math.random() * newOrder.length);
+    
+        [newOrder[i], newOrder[j]] = [newOrder[j], newOrder[i]];
+        return newOrder;
+      });
+    }, 3000); 
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="bg-[#E0D1BE] text-[#1c1c1c] py-10 px-6 md:px-16">
+    <section className="bg-[#E0D1BE] text-[#1c1c1c] py-10 px-4  md:px-6 lg:px-24 overflow-hidden">
       {/* Heading */}
       <h2 className="text-3xl md:text-5xl font-serif leading-tight max-w-4xl mb-12">
         WE'RE PROUD TO BE <br />
@@ -25,26 +46,31 @@ const Publications: React.FC = () => {
         PUBLICATIONS
       </h2>
 
-      {/* Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 md:gap-8">
-        {publications.map((item) => (
-          <div
-            key={item.id}
-            className="aspect-square flex items-center justify-center overflow-hidden group cursor-pointer hover:shadow-md transition-all duration-300 border border-[#12262066]"
-          >
-            <div className="relative w-full h-full">
-              <Image
-                src={item.img}
-                alt={item.title}
-                fill
-                className="object-contain group-hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-          </div>
-        ))}
-      </div>
+      {/* Animated Grid */}
+      <motion.div
+        layout
+        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 md:gap-8"
+      >
+        <AnimatePresence>
+          {items.map((item) => (
+            <motion.div
+              layout
+              key={item.id}
+              className="aspect-square flex items-center justify-center overflow-hidden group cursor-pointer hover:shadow-md border border-[#12262066]"
+              transition={{ duration: 2 }}
+            >
+              <div className="relative w-full h-full">
+                <Image
+                  src={item.img}
+                  alt={item.title}
+                  fill
+                  className="object-contain group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </motion.div>
     </section>
   );
-};
-
-export default Publications;
+}
