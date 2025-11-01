@@ -13,8 +13,8 @@ export default function Home() {
     <div className=" ">
   
       {/* <Hero expanded={expanded} setExpanded={setExpanded} /> */}
-      {/* <HeroSection></HeroSection> */}
-      {/* <Publications></Publications> */}
+      <HeroSection></HeroSection>
+      <Publications></Publications>
     </div>
   );
 }
