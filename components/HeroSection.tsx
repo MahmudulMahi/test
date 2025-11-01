@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { FiArrowUpRight } from "react-icons/fi";
 
 export default function HeroSection() {
   const [clickStage, setClickStage] = useState(0);
@@ -14,7 +15,7 @@ export default function HeroSection() {
   return (
     <section
       onClick={handleClick}
-      className="relative h-[1200px] bg-[#E0D1BE] overflow-hidden flex items-center justify-start cursor-pointer"
+      className="relative h-[700px] lg:h-[1200px] bg-[#E0D1BE] overflow-hidden flex items-center justify-start cursor-pointer"
     >
       {/* Background Image (visible at stage 3) */}
       <motion.div
@@ -64,59 +65,65 @@ export default function HeroSection() {
           RESULTS YOU <br /> CAN SEE PR <br /> YOU CAN TRUST.
         </h1>
       </motion.div> */}
-<motion.div
-  initial={{ x: 0, y: 0, opacity: 1 }}
-  animate={
-    clickStage === 3
-      ? {
-          x: 0,
-          y: 0,
-          left: 0,
-          top: 0,
-          position: "absolute",
-          opacity: 1,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%",
-          height: "100%",
-          textAlign: "center",
-          color: "#fff",
+      <motion.div
+        initial={{ x: 0, y: 0, opacity: 1 }}
+        animate={
+          clickStage === 3
+            ? {
+                x: 0,
+                y: 0,
+                left: 0,
+                top: 0,
+                position: "absolute",
+                opacity: 1,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                width: "100%",
+                height: "100%",
+                textAlign: "center",
+                color: "#fff",
+              }
+            : {
+                x: 0,
+                y: 0,
+                left: "0%",
+                top: "auto",
+                position: "relative",
+                opacity: 1,
+                textAlign: "left",
+                color: "#1a2a1f",
+              }
         }
-      : {
-          x: 0,
-          y: 0,
-          left: "0%",
-          top: "auto",
-          position: "relative",
-          opacity: 1,
-          textAlign: "left",
-          color: "#1a2a1f",
-        }
-  }
-  transition={{ duration: 1, ease: "easeInOut" }}
-  className="z-30"
->
-  <div className="flex flex-col items-center md:items-start gap-4">
-    <h1 className="text-4xl md:text-6xl font-light leading-tight tracking-wide w-[700px] pl-11">
-      RESULTS YOU <br /> CAN SEE PR <br /> YOU CAN TRUST.
-    </h1>
+        transition={{ duration: 1, ease: "easeInOut" }}
+        className="z-30"
+      >
+        <div className="flex flex-col items-center md:items-start gap-4 ">
+          <h1 className="text-4xl md:text-6xl font-light leading-tight tracking-wide max-w-[700px] pl-11">
+            RESULTS YOU <br /> CAN SEE PR <br /> YOU CAN TRUST.
+          </h1>
 
-    {/* Fade in subtitle & button only at stage 3 */}
-    <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: clickStage === 3 ? 1 : 0, y: clickStage === 3 ? 0 : 10 }}
-      transition={{ duration: 0.8, ease: "easeInOut" }}
-      className="flex flex-col items-center  gap-2  justify-center text-center w-full"
-    >
-      <p>set our business</p>
-      <button className="bg-[#122620] text-white px-4 py-2 rounded-full text-xs md:text-sm hover:bg-[#10382a] transition">
-        explore our services
-      </button>
-    </motion.div>
-  </div>
-</motion.div>
-
+          {/* Fade in subtitle & button only at stage 3 */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{
+              opacity: clickStage === 3 ? 1 : 0,
+              y: clickStage === 3 ? 0 : 10,
+            }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            className="flex flex-col items-center  gap-2  justify-center text-center w-full"
+          >
+            <p className="uppercase font-medium text-2xl max-w-[600px]  overflow-hidden">
+              OUR SET OF EXPERIENCES IS BASED ON TRUST,SELL AND A COMMITMENT TO
+              GREATNESS
+            </p>
+            <button className="bg-[#122620] text-white text-lg md:text-xl lg:text-2xl px-6 py-4 rounded-full hover:bg-[#10382a] transition flex items-center gap-3 group font-medium mt-4">
+              explore our services
+              <FiArrowUpRight className="text-2xl transition-transform duration-300 group-hover:rotate-45" />
+            </button>
+          </motion.div>
+        </div>
+      </motion.div>
 
       {/* Top Image */}
       <motion.div
@@ -138,6 +145,7 @@ export default function HeroSection() {
           alt="PR material"
           width={500}
           height={600}
+          className=""
         />
       </motion.div>
 
@@ -155,6 +163,7 @@ export default function HeroSection() {
           alt="Person photo"
           width={350}
           height={300}
+          className="hidden md:block"
         />
       </motion.div>
 
@@ -172,6 +181,7 @@ export default function HeroSection() {
           alt="Workspace"
           width={400}
           height={400}
+          className="hidden lg:block"
         />
       </motion.div>
 

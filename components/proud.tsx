@@ -16,7 +16,7 @@ const publications = [
 
 const Publications: React.FC = () => {
   return (
-    <section className="bg-[#E0D1BE] text-[#1c1c1c] py-20 px-6 md:px-16">
+    <section className="bg-[#E0D1BE] text-[#1c1c1c] py-10 px-6 md:px-16">
       {/* Heading */}
       <h2 className="text-3xl md:text-5xl font-serif leading-tight max-w-4xl mb-12">
         WE'RE PROUD TO BE <br />
