@@ -18,7 +18,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="fixed top-0  w-full z-50 shadow-sm backdrop-blur-sm transition-all duration-300 max-w-[1440px] mx-auto"
+      className="fixed top-0  w-full z-50 backdrop-blur-sm transition-all duration-300 max-w-[1440px] mx-auto"
       style={{
         background: `linear-gradient(
           rgba(224, 209, 190, ${1 - Math.min(scrollY / 400, 0.4)}),
@@ -29,6 +29,7 @@ export default function Navbar() {
       <div className="max-w-[1440px] mx-auto px-4  md:px-6 lg:px-24 py-3 flex items-center justify-between h-[80px] md:h-[98px]">
         
         <div className="flex items-center space-x-2">
+          {/* logo */}
           <Image
             src="/logo/logo.png"
             alt="Logo"
