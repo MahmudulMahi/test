@@ -27,7 +27,7 @@ body {
 }
 body {
   font-family: "Playfair Display", serif;
-  background-color: #e3d6c4;
+  
 }
 .spin-slow {
   animation: spin 12s linear infinite;
